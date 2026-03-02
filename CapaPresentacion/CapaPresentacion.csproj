@@ -1,0 +1,713 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6BACC60-F422-43A3-80E1-5428EB40AE49}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44372</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\default\app-rtl.min.css" />
+    <Content Include="assets\css\default\app.min.css" />
+    <Content Include="assets\css\default\images\bg-login-dark-mode.png" />
+    <Content Include="assets\css\default\images\bg-login.png" />
+    <Content Include="assets\css\default\images\coming-soon.jpg" />
+    <Content Include="assets\css\default\images\cover-pattern.png" />
+    <Content Include="assets\css\default\images\cover-sidebar-user.jpg" />
+    <Content Include="assets\css\default\images\cover-sidebar.jpg" />
+    <Content Include="assets\css\default\images\error-page-pattern.png" />
+    <Content Include="assets\css\default\images\profile-cover.jpg" />
+    <Content Include="assets\css\default\images\transparent\black-0.1.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.2.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.3.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.4.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.5.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.6.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.7.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.8.png" />
+    <Content Include="assets\css\default\images\transparent\black-0.9.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.1.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.2.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.3.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.4.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.5.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.6.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.7.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.8.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.9.png" />
+    <Content Include="assets\css\default\images\transparent\white-0.98.png" />
+    <Content Include="assets\css\default\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\css\default\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\css\default\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\css\default\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\css\default\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\css\default\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\material\app-rtl.min.css" />
+    <Content Include="assets\css\material\app.min.css" />
+    <Content Include="assets\css\material\images\bg-login-dark-mode.png" />
+    <Content Include="assets\css\material\images\bg-login.png" />
+    <Content Include="assets\css\material\images\coming-soon.jpg" />
+    <Content Include="assets\css\material\images\cover-pattern.png" />
+    <Content Include="assets\css\material\images\cover-sidebar-user.jpg" />
+    <Content Include="assets\css\material\images\cover-sidebar.jpg" />
+    <Content Include="assets\css\material\images\error-page-pattern.png" />
+    <Content Include="assets\css\material\images\profile-cover.jpg" />
+    <Content Include="assets\css\material\images\transparent\black-0.1.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.2.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.3.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.4.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.5.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.6.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.7.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.8.png" />
+    <Content Include="assets\css\material\images\transparent\black-0.9.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.1.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.2.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.3.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.4.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.5.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.6.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.7.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.8.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.9.png" />
+    <Content Include="assets\css\material\images\transparent\white-0.98.png" />
+    <Content Include="assets\css\material\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\css\material\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\css\material\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\css\material\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\css\material\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\css\material\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\transparent\app-rtl.min.css" />
+    <Content Include="assets\css\transparent\app.min.css" />
+    <Content Include="assets\css\transparent\images\bg-login-dark-mode.png" />
+    <Content Include="assets\css\transparent\images\bg-login.png" />
+    <Content Include="assets\css\transparent\images\coming-soon.jpg" />
+    <Content Include="assets\css\transparent\images\cover-pattern.png" />
+    <Content Include="assets\css\transparent\images\cover-sidebar-user.jpg" />
+    <Content Include="assets\css\transparent\images\cover-sidebar.jpg" />
+    <Content Include="assets\css\transparent\images\error-page-pattern.png" />
+    <Content Include="assets\css\transparent\images\page-cover-v2.jpg" />
+    <Content Include="assets\css\transparent\images\page-cover.jpg" />
+    <Content Include="assets\css\transparent\images\profile-cover.jpg" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.1.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.2.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.3.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.4.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.5.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.6.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.7.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.8.png" />
+    <Content Include="assets\css\transparent\images\transparent\black-0.9.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.1.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.2.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.3.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.4.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.5.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.6.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.7.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.8.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.9.png" />
+    <Content Include="assets\css\transparent\images\transparent\white-0.98.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\css\transparent\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\vendor.min.css" />
+    <Content Include="assets\img\coming-soon\coming-soon-1.jpg" />
+    <Content Include="assets\img\cover\cover-profile.jpg" />
+    <Content Include="assets\img\cover\cover-scrum-board.png" />
+    <Content Include="assets\img\flag\cn.jpg" />
+    <Content Include="assets\img\flag\de.jpg" />
+    <Content Include="assets\img\flag\fr.jpg" />
+    <Content Include="assets\img\flag\jp.jpg" />
+    <Content Include="assets\img\flag\us.jpg" />
+    <Content Include="assets\img\gallery\gallery-1-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-1.jpg" />
+    <Content Include="assets\img\gallery\gallery-10-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-10.jpg" />
+    <Content Include="assets\img\gallery\gallery-11-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-11.jpg" />
+    <Content Include="assets\img\gallery\gallery-12-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-12.jpg" />
+    <Content Include="assets\img\gallery\gallery-13-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-13.jpg" />
+    <Content Include="assets\img\gallery\gallery-14-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-14.jpg" />
+    <Content Include="assets\img\gallery\gallery-15-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-15.jpg" />
+    <Content Include="assets\img\gallery\gallery-16-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-16.jpg" />
+    <Content Include="assets\img\gallery\gallery-17-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-17.jpg" />
+    <Content Include="assets\img\gallery\gallery-18-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-18.jpg" />
+    <Content Include="assets\img\gallery\gallery-19-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-19.jpg" />
+    <Content Include="assets\img\gallery\gallery-2-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-2.jpg" />
+    <Content Include="assets\img\gallery\gallery-20-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-20.jpg" />
+    <Content Include="assets\img\gallery\gallery-21-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-21.jpg" />
+    <Content Include="assets\img\gallery\gallery-22-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-22.jpg" />
+    <Content Include="assets\img\gallery\gallery-23-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-23.jpg" />
+    <Content Include="assets\img\gallery\gallery-24-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-24.jpg" />
+    <Content Include="assets\img\gallery\gallery-25-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-25.jpg" />
+    <Content Include="assets\img\gallery\gallery-26-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-26.jpg" />
+    <Content Include="assets\img\gallery\gallery-27-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-27.jpg" />
+    <Content Include="assets\img\gallery\gallery-28-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-28.jpg" />
+    <Content Include="assets\img\gallery\gallery-29-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-29.jpg" />
+    <Content Include="assets\img\gallery\gallery-3-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-3.jpg" />
+    <Content Include="assets\img\gallery\gallery-30-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-30.jpg" />
+    <Content Include="assets\img\gallery\gallery-31-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-31.jpg" />
+    <Content Include="assets\img\gallery\gallery-32-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-32.jpg" />
+    <Content Include="assets\img\gallery\gallery-33-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-33.jpg" />
+    <Content Include="assets\img\gallery\gallery-34-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-34.jpg" />
+    <Content Include="assets\img\gallery\gallery-35-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-35.jpg" />
+    <Content Include="assets\img\gallery\gallery-36-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-36.jpg" />
+    <Content Include="assets\img\gallery\gallery-37-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-37.jpg" />
+    <Content Include="assets\img\gallery\gallery-38-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-38.jpg" />
+    <Content Include="assets\img\gallery\gallery-39-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-39.jpg" />
+    <Content Include="assets\img\gallery\gallery-4-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-4.jpg" />
+    <Content Include="assets\img\gallery\gallery-40-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-40.jpg" />
+    <Content Include="assets\img\gallery\gallery-41-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-41.jpg" />
+    <Content Include="assets\img\gallery\gallery-42-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-42.jpg" />
+    <Content Include="assets\img\gallery\gallery-43-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-43.jpg" />
+    <Content Include="assets\img\gallery\gallery-44-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-44.jpg" />
+    <Content Include="assets\img\gallery\gallery-45-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-45.jpg" />
+    <Content Include="assets\img\gallery\gallery-46-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-46.jpg" />
+    <Content Include="assets\img\gallery\gallery-47-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-47.jpg" />
+    <Content Include="assets\img\gallery\gallery-48-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-48.jpg" />
+    <Content Include="assets\img\gallery\gallery-49-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-49.jpg" />
+    <Content Include="assets\img\gallery\gallery-5-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-5.jpg" />
+    <Content Include="assets\img\gallery\gallery-50-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-50.jpg" />
+    <Content Include="assets\img\gallery\gallery-51-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-51.jpg" />
+    <Content Include="assets\img\gallery\gallery-52-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-52.jpg" />
+    <Content Include="assets\img\gallery\gallery-53-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-53.jpg" />
+    <Content Include="assets\img\gallery\gallery-54-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-54.jpg" />
+    <Content Include="assets\img\gallery\gallery-55-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-55.jpg" />
+    <Content Include="assets\img\gallery\gallery-56-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-56.jpg" />
+    <Content Include="assets\img\gallery\gallery-57-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-57.jpg" />
+    <Content Include="assets\img\gallery\gallery-58-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-58.jpg" />
+    <Content Include="assets\img\gallery\gallery-59-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-59.jpg" />
+    <Content Include="assets\img\gallery\gallery-6-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-6.jpg" />
+    <Content Include="assets\img\gallery\gallery-60-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-60.jpg" />
+    <Content Include="assets\img\gallery\gallery-61-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-61.jpg" />
+    <Content Include="assets\img\gallery\gallery-62-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-62.jpg" />
+    <Content Include="assets\img\gallery\gallery-63-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-63.jpg" />
+    <Content Include="assets\img\gallery\gallery-64-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-64.jpg" />
+    <Content Include="assets\img\gallery\gallery-65-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-65.jpg" />
+    <Content Include="assets\img\gallery\gallery-66-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-66.jpg" />
+    <Content Include="assets\img\gallery\gallery-67-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-67.jpg" />
+    <Content Include="assets\img\gallery\gallery-68-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-68.jpg" />
+    <Content Include="assets\img\gallery\gallery-69-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-69.jpg" />
+    <Content Include="assets\img\gallery\gallery-7-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-7.jpg" />
+    <Content Include="assets\img\gallery\gallery-70-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-70.jpg" />
+    <Content Include="assets\img\gallery\gallery-8-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-8.jpg" />
+    <Content Include="assets\img\gallery\gallery-9-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-9.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-1.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-10.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-11-thumb.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-11.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-2.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-3.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-4.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-5.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-6.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-7.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-8.jpg" />
+    <Content Include="assets\img\gallery\gallery-portrait-9.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-1-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-1.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-10-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-10.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-11-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-11.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-12-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-12.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-13-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-13.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-14-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-14.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-15.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-16-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-16.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-17-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-17.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-18-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-18.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-2-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-2.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-3-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-3.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-4-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-4.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-5-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-5.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-6-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-6.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-7-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-7.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-8-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-8.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-9-thumb.jpg" />
+    <Content Include="assets\img\login-bg\login-bg-9.jpg" />
+    <Content Include="assets\img\logo\logo-admin-apple.png" />
+    <Content Include="assets\img\logo\logo-admin-facebook.png" />
+    <Content Include="assets\img\logo\logo-admin-google.png" />
+    <Content Include="assets\img\logo\logo-admin-transparent.png" />
+    <Content Include="assets\img\logo\logo-admin.png" />
+    <Content Include="assets\img\logo\logo-bs4.png" />
+    <Content Include="assets\img\logo\logo-bs5.png" />
+    <Content Include="assets\img\pos\icon-table-black.svg" />
+    <Content Include="assets\img\pos\icon-table.svg" />
+    <Content Include="assets\img\pos\logo-white.svg" />
+    <Content Include="assets\img\pos\logo.svg" />
+    <Content Include="assets\img\pos\product-1.jpg" />
+    <Content Include="assets\img\pos\product-10.jpg" />
+    <Content Include="assets\img\pos\product-11.jpg" />
+    <Content Include="assets\img\pos\product-12.jpg" />
+    <Content Include="assets\img\pos\product-13.jpg" />
+    <Content Include="assets\img\pos\product-14.jpg" />
+    <Content Include="assets\img\pos\product-15.jpg" />
+    <Content Include="assets\img\pos\product-16.jpg" />
+    <Content Include="assets\img\pos\product-17.jpg" />
+    <Content Include="assets\img\pos\product-2.jpg" />
+    <Content Include="assets\img\pos\product-3.jpg" />
+    <Content Include="assets\img\pos\product-4.jpg" />
+    <Content Include="assets\img\pos\product-5.jpg" />
+    <Content Include="assets\img\pos\product-6.jpg" />
+    <Content Include="assets\img\pos\product-7.jpg" />
+    <Content Include="assets\img\pos\product-8.jpg" />
+    <Content Include="assets\img\pos\product-9.jpg" />
+    <Content Include="assets\img\pricing\img-1.svg" />
+    <Content Include="assets\img\product\product-1.jpg" />
+    <Content Include="assets\img\product\product-1.png" />
+    <Content Include="assets\img\product\product-10.jpg" />
+    <Content Include="assets\img\product\product-11.jpg" />
+    <Content Include="assets\img\product\product-12.jpg" />
+    <Content Include="assets\img\product\product-13.jpg" />
+    <Content Include="assets\img\product\product-14.jpg" />
+    <Content Include="assets\img\product\product-15.jpg" />
+    <Content Include="assets\img\product\product-16.jpg" />
+    <Content Include="assets\img\product\product-2.jpg" />
+    <Content Include="assets\img\product\product-2.png" />
+    <Content Include="assets\img\product\product-3.jpg" />
+    <Content Include="assets\img\product\product-3.png" />
+    <Content Include="assets\img\product\product-4.jpg" />
+    <Content Include="assets\img\product\product-4.png" />
+    <Content Include="assets\img\product\product-5.jpg" />
+    <Content Include="assets\img\product\product-5.png" />
+    <Content Include="assets\img\product\product-6.jpg" />
+    <Content Include="assets\img\product\product-6.png" />
+    <Content Include="assets\img\product\product-7.jpg" />
+    <Content Include="assets\img\product\product-7.png" />
+    <Content Include="assets\img\product\product-8.jpg" />
+    <Content Include="assets\img\product\product-9.jpg" />
+    <Content Include="assets\img\product\product-preview-ipad.png" />
+    <Content Include="assets\img\product\product-preview-iphone.png" />
+    <Content Include="assets\img\product\product-preview-macbook.png" />
+    <Content Include="assets\img\product\product-preview-sm.jpg" />
+    <Content Include="assets\img\product\product-preview.jpg" />
+    <Content Include="assets\img\svg\img-1.svg" />
+    <Content Include="assets\img\svg\img-2.svg" />
+    <Content Include="assets\img\svg\img-3.svg" />
+    <Content Include="assets\img\svg\img-4.svg" />
+    <Content Include="assets\img\theme\apple.jpg" />
+    <Content Include="assets\img\theme\blog.jpg" />
+    <Content Include="assets\img\theme\corporate.jpg" />
+    <Content Include="assets\img\theme\default.jpg" />
+    <Content Include="assets\img\theme\e-commerce.jpg" />
+    <Content Include="assets\img\theme\facebook.jpg" />
+    <Content Include="assets\img\theme\forum.jpg" />
+    <Content Include="assets\img\theme\google.jpg" />
+    <Content Include="assets\img\theme\material.jpg" />
+    <Content Include="assets\img\theme\one-page-parallax.jpg" />
+    <Content Include="assets\img\theme\transparent.jpg" />
+    <Content Include="assets\img\transparent\black-0.1.png" />
+    <Content Include="assets\img\transparent\black-0.2.png" />
+    <Content Include="assets\img\transparent\black-0.3.png" />
+    <Content Include="assets\img\transparent\black-0.4.png" />
+    <Content Include="assets\img\transparent\black-0.5.png" />
+    <Content Include="assets\img\transparent\black-0.6.png" />
+    <Content Include="assets\img\transparent\black-0.7.png" />
+    <Content Include="assets\img\transparent\black-0.8.png" />
+    <Content Include="assets\img\transparent\black-0.9.png" />
+    <Content Include="assets\img\transparent\white-0.1.png" />
+    <Content Include="assets\img\transparent\white-0.2.png" />
+    <Content Include="assets\img\transparent\white-0.3.png" />
+    <Content Include="assets\img\transparent\white-0.4.png" />
+    <Content Include="assets\img\transparent\white-0.5.png" />
+    <Content Include="assets\img\transparent\white-0.6.png" />
+    <Content Include="assets\img\transparent\white-0.7.png" />
+    <Content Include="assets\img\transparent\white-0.8.png" />
+    <Content Include="assets\img\transparent\white-0.9.png" />
+    <Content Include="assets\img\transparent\white-0.98.png" />
+    <Content Include="assets\img\user\user-1.jpg" />
+    <Content Include="assets\img\user\user-10.jpg" />
+    <Content Include="assets\img\user\user-11.jpg" />
+    <Content Include="assets\img\user\user-12.jpg" />
+    <Content Include="assets\img\user\user-13.jpg" />
+    <Content Include="assets\img\user\user-14.jpg" />
+    <Content Include="assets\img\user\user-2.jpg" />
+    <Content Include="assets\img\user\user-3.jpg" />
+    <Content Include="assets\img\user\user-4.jpg" />
+    <Content Include="assets\img\user\user-5.jpg" />
+    <Content Include="assets\img\user\user-6.jpg" />
+    <Content Include="assets\img\user\user-7.jpg" />
+    <Content Include="assets\img\user\user-8.jpg" />
+    <Content Include="assets\img\user\user-9.jpg" />
+    <Content Include="assets\img\version\ajax.jpg" />
+    <Content Include="assets\img\version\angular10x.jpg" />
+    <Content Include="assets\img\version\angular1x.jpg" />
+    <Content Include="assets\img\version\django.jpg" />
+    <Content Include="assets\img\version\dotnet.jpg" />
+    <Content Include="assets\img\version\html.jpg" />
+    <Content Include="assets\img\version\laravel.jpg" />
+    <Content Include="assets\img\version\reactjs.jpg" />
+    <Content Include="assets\img\version\svelte.jpg" />
+    <Content Include="assets\img\version\vuejs.jpg" />
+    <Content Include="assets\js\app.min.js" />
+    <Content Include="assets\js\demo\form-editable.demo.js" />
+    <Content Include="assets\js\demo\form-multiple-upload.demo.js" />
+    <Content Include="assets\js\demo\form-plugins.demo.js" />
+    <Content Include="assets\js\demo\form-slider-switcher.demo.js" />
+    <Content Include="assets\js\demo\form-summernote.demo.js" />
+    <Content Include="assets\js\demo\form-wizards-validation.demo.js" />
+    <Content Include="assets\js\demo\form-wizards.demo.js" />
+    <Content Include="assets\js\demo\form-wysiwyg.demo.js" />
+    <Content Include="assets\js\demo\table-manage-default.demo.js" />
+    <Content Include="assets\js\demo\ui-modal-notification.demo.js" />
+    <Content Include="assets\js\vendor.min.js" />
+    <Content Include="assets\plugins\bootstrap-filestyle\js\bootstrap-filestyle.js" />
+    <Content Include="assets\plugins\bootstrap-filestyle\js\bootstrap-filestyle.min.js" />
+    <Content Include="assets\plugins\datatables.net-bs5\css\dataTables.bootstrap5.css" />
+    <Content Include="assets\plugins\datatables.net-bs5\css\dataTables.bootstrap5.min.css" />
+    <Content Include="assets\plugins\datatables.net-bs5\js\dataTables.bootstrap5.js" />
+    <Content Include="assets\plugins\datatables.net-bs5\js\dataTables.bootstrap5.min.js" />
+    <Content Include="assets\plugins\datatables.net-bs5\js\dataTables.bootstrap5.min.mjs" />
+    <Content Include="assets\plugins\datatables.net-bs5\js\dataTables.bootstrap5.mjs" />
+    <Content Include="assets\plugins\datatables.net-bs5\License.txt" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\css\responsive.bootstrap5.css" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\css\responsive.bootstrap5.min.css" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\js\responsive.bootstrap5.js" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\js\responsive.bootstrap5.min.js" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\js\responsive.bootstrap5.min.mjs" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\js\responsive.bootstrap5.mjs" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\License.txt" />
+    <Content Include="assets\plugins\datatables.net-responsive\js\dataTables.responsive.js" />
+    <Content Include="assets\plugins\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="assets\plugins\datatables.net-responsive\js\dataTables.responsive.min.mjs" />
+    <Content Include="assets\plugins\datatables.net-responsive\js\dataTables.responsive.mjs" />
+    <Content Include="assets\plugins\datatables.net-responsive\License.txt" />
+    <Content Include="assets\plugins\datatables.net\js\dataTables.js" />
+    <Content Include="assets\plugins\datatables.net\js\dataTables.min.js" />
+    <Content Include="assets\plugins\datatables.net\js\dataTables.min.mjs" />
+    <Content Include="assets\plugins\datatables.net\js\dataTables.mjs" />
+    <Content Include="assets\plugins\datatables.net\License.txt" />
+    <Content Include="assets\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="assets\plugins\gritter\images\gritter-light.png" />
+    <Content Include="assets\plugins\gritter\images\gritter-long.png" />
+    <Content Include="assets\plugins\gritter\images\gritter.png" />
+    <Content Include="assets\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="assets\plugins\gritter\images\trees.jpg" />
+    <Content Include="assets\plugins\gritter\index.html" />
+    <Content Include="assets\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="assets\plugins\gritter\js\jquery.gritter.min.js" />
+    <Content Include="assets\plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="assets\plugins\loadingoverlay\loadingoverlay.js" />
+    <Content Include="assets\plugins\loadingoverlay\loadingoverlay.min.js" />
+    <Content Include="assets\plugins\select2\es.min.js" />
+    <Content Include="assets\plugins\select2\select2.min.css" />
+    <Content Include="assets\plugins\select2\select2.min.js" />
+    <Content Include="assets\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="assets\plugins\toastr\toastr.min.css" />
+    <Content Include="assets\plugins\toastr\toastr.min.js" />
+    <Content Include="CarrerasPage.aspx" />
+    <Content Include="EstudiantesPage.aspx" />
+    <Content Include="GradosPage.aspx" />
+    <Content Include="Imagen\alerta.png" />
+    <Content Include="Imagen\error.png" />
+    <Content Include="Imagen\sinimagen.png" />
+    <Content Include="Imagen\success.png" />
+    <Content Include="Imagen\warning.png" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="js\CarrerasPage.js" />
+    <Content Include="js\EstudiantesPage.js" />
+    <Content Include="js\GradosPage.js" />
+    <Content Include="js\Inicio.js" />
+    <Content Include="js\Masterpa.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarrerasPage.aspx.cs">
+      <DependentUpon>CarrerasPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarrerasPage.aspx.designer.cs">
+      <DependentUpon>CarrerasPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstudiantesPage.aspx.cs">
+      <DependentUpon>EstudiantesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstudiantesPage.aspx.designer.cs">
+      <DependentUpon>EstudiantesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GradosPage.aspx.cs">
+      <DependentUpon>GradosPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GradosPage.aspx.designer.cs">
+      <DependentUpon>GradosPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageMaster.Master.cs">
+      <DependentUpon>PageMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageMaster.Master.designer.cs">
+      <DependentUpon>PageMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\.DS_Store" />
+    <Content Include="assets\css\fonts\bootstrap-icons.woff" />
+    <Content Include="assets\css\fonts\bootstrap-icons.woff2" />
+    <Content Include="assets\data\form-elements\code-1.json" />
+    <Content Include="assets\data\form-elements\code-10.json" />
+    <Content Include="assets\data\form-elements\code-11.json" />
+    <Content Include="assets\data\form-elements\code-12.json" />
+    <Content Include="assets\data\form-elements\code-13.json" />
+    <Content Include="assets\data\form-elements\code-2.json" />
+    <Content Include="assets\data\form-elements\code-3.json" />
+    <Content Include="assets\data\form-elements\code-4.json" />
+    <Content Include="assets\data\form-elements\code-5.json" />
+    <Content Include="assets\data\form-elements\code-6.json" />
+    <Content Include="assets\data\form-elements\code-7.json" />
+    <Content Include="assets\data\form-elements\code-8.json" />
+    <Content Include="assets\data\form-elements\code-9.json" />
+    <Content Include="assets\data\form-plugins\code-1.json" />
+    <Content Include="assets\data\form-plugins\code-10.json" />
+    <Content Include="assets\data\form-plugins\code-11.json" />
+    <Content Include="assets\data\form-plugins\code-2.json" />
+    <Content Include="assets\data\form-plugins\code-3.json" />
+    <Content Include="assets\data\form-plugins\code-4.json" />
+    <Content Include="assets\data\form-plugins\code-5.json" />
+    <Content Include="assets\data\form-plugins\code-6.json" />
+    <Content Include="assets\data\form-plugins\code-7.json" />
+    <Content Include="assets\data\form-plugins\code-8.json" />
+    <Content Include="assets\data\form-plugins\code-9.json" />
+    <Content Include="assets\data\form-validation\code-1.json" />
+    <Content Include="assets\data\form-validation\code-2.json" />
+    <Content Include="assets\img\.DS_Store" />
+    <Content Include="assets\img\pricing\.DS_Store" />
+    <Content Include="assets\img\svg\.DS_Store" />
+    <Content Include="assets\img\theme\.DS_Store" />
+    <Content Include="assets\img\version\.DS_Store" />
+    <Content Include="assets\plugins\datatables.net-bs5\package.json" />
+    <Content Include="assets\plugins\datatables.net-bs5\Readme.md" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\package.json" />
+    <Content Include="assets\plugins\datatables.net-responsive-bs5\Readme.md" />
+    <Content Include="assets\plugins\datatables.net-responsive\package.json" />
+    <Content Include="assets\plugins\datatables.net-responsive\Readme.md" />
+    <Content Include="assets\plugins\datatables.net\package.json" />
+    <Content Include="assets\plugins\datatables.net\Readme.md" />
+    <Content Include="assets\plugins\gritter\bower.json" />
+    <Content Include="assets\plugins\gritter\package.json" />
+    <Content Include="assets\plugins\gritter\README.markdown" />
+    <Content Include="assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="assets\webfonts\fa-v4compatibility.woff2" />
+    <None Include="packages.config" />
+    <Content Include="PageMaster.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{43f84050-9861-4def-be01-9fe4e86cc20c}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{aeada648-db40-464c-9d08-0408671b97ba}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56829</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44372/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

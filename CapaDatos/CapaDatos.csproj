@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="DCarrera.cs" />
+    <Compile Include="DDocente.cs" />
+    <Compile Include="DEstudiante.cs" />
     <Compile Include="DGradoAcademico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

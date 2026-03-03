@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .est-perfil {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover; /* Evita que la imagen se estire o aplaste */
             object-position: center; /* Asegura que se vea el centro de la foto */
@@ -19,6 +19,29 @@
             </div>
         </div>
         <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="cboGradosGe">Grados Academicos</label>
+                                <select class="form-select" id="cboGradosGe">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="cboCarrerasGe">Carreras</label>
+                                <select class="form-select" id="cboCarrerasGe">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
             <table id="tbEstudiantes" width="100%" class="table table-striped table-bordered align-middle text-nowrap">
                 <thead>
                     <tr>
@@ -63,6 +86,12 @@
                                         <label class="form-label" for="txtCelular">Celular</label>
                                         <input class="form-control form-control-sm model" type="text" id="txtCelular" placeholder="Nro celular" name="Celular" />
                                     </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cboGrados">Grado Academico</label>
+                                        <select class="form-select form-select-sm" id="cboGrados">
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="mb-3">
@@ -79,9 +108,15 @@
                                         <label class="form-label" for="txtCodigo">Codigo</label>
                                         <input class="form-control form-control-sm model" type="text" id="txtCodigo" placeholder="Codigo" name="Codigo" />
                                     </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cboCarreras">Carreras</label>
+                                        <select class="form-select form-select-sm" id="cboCarreras">
+                                        </select>
+                                    </div>
                                 </div>
 
-                                <div class="col-12 d-flex justify-content-center">
+                                <%--<div class="col-12 d-flex justify-content-center">
                                     <div class="mb-3 w-50">
                                         <label class="form-label" for="cboEstado">Estado</label>
                                         <select class="form-select form-select-sm" id="cboEstado">
@@ -89,12 +124,20 @@
                                             <option value="0">Inactivo</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div>--%>
 
                             </div>
 
                         </div>
                         <div class="col-xl-5">
+                            <div class="mb-3">
+                                <label class="form-label" for="cboEstado">Select Estado</label>
+                                <select class="form-select form-select-sm" id="cboEstado">
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
+
                             <div class="mb-2">
                                 <p class="mb-0">Debe seleccionar una foto</p>
                             </div>

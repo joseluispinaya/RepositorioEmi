@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NCarrera.cs" />
+    <Compile Include="NDocente.cs" />
+    <Compile Include="NEstudiante.cs" />
     <Compile Include="NGradoAcademico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

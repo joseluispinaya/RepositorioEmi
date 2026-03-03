@@ -31,8 +31,8 @@ $('#btnSwaln').on('click', function () {
 })
 
 $('#btnAlertaa').on('click', function () {
-
-	MensajeGritter("Campo requerido", "Por favor, ingrese el nombre del grado.", "warning");
+	MensajeToast("Campo incompleto", "Por favor, ingrese el nombre del grado.", "warning");
+	//MensajeGritter("Campo requerido", "Por favor, ingrese el nombre del grado.", "warning");
 })
 
 // fin

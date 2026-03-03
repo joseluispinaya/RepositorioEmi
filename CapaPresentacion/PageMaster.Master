@@ -127,7 +127,7 @@
                         <div class="menu-submenu">
                             <div class="menu-item">
                                 <a href="GradosPage.aspx" class="menu-link">
-                                    <div class="menu-text">Grados Acd</div>
+                                    <div class="menu-text">Grado Academico</div>
                                 </a>
                             </div>
                             <div class="menu-item">
@@ -154,11 +154,11 @@
 
 
                     <div class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="DocentesPage.aspx" class="menu-link">
                             <div class="menu-icon">
                                 <i class="fas fa-money-check-dollar"></i>
                             </div>
-                            <div class="menu-text">Transacciones</div>
+                            <div class="menu-text">Docentes</div>
                         </a>
                     </div>
 

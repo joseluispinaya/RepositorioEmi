@@ -543,6 +543,7 @@
     <Content Include="assets\plugins\toastr\toastr.min.css" />
     <Content Include="assets\plugins\toastr\toastr.min.js" />
     <Content Include="CarrerasPage.aspx" />
+    <Content Include="DocentesPage.aspx" />
     <Content Include="EstudiantesPage.aspx" />
     <Content Include="GradosPage.aspx" />
     <Content Include="Imagen\alerta.png" />
@@ -565,6 +566,13 @@
     </Compile>
     <Compile Include="CarrerasPage.aspx.designer.cs">
       <DependentUpon>CarrerasPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesPage.aspx.cs">
+      <DependentUpon>DocentesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocentesPage.aspx.designer.cs">
+      <DependentUpon>DocentesPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="EstudiantesPage.aspx.cs">
       <DependentUpon>EstudiantesPage.aspx</DependentUpon>

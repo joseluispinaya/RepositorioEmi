@@ -309,8 +309,15 @@ $('#tbEstudiantes tbody').on('click', '.btn-detalle', function () {
 
 $("#btnNuevore").on("click", function () {
 
-    //const idGradoAcademico = $("#cboGrados").val();
+    const idGradoAcademico = $("#cboGradosGe").val();
     //const idCarrera = $("#cboCarreras").val();
+
+    // Validacion antes de agregar nuevo est
+    if (!idGradoAcademico) {
+        MensajeToast("Atención", "Por favor, seleccionar un Grado Académico.", "warning");
+        $("#cboGradosGe").focus();
+        return;
+    }
 
     idEditar = 0;
     $("#txtNombrees").val("");
@@ -363,5 +370,117 @@ function mostrarImagenSeleccionada(input) {
 $('#txtFoto').change(function () {
     mostrarImagenSeleccionada(this);
 });
+
+function habilitarBoton() {
+    $('#btnGuardarReg').prop('disabled', false);
+}
+
+$("#btnGuardarReg").on("click", function () {
+    // Bloqueo inmediato
+    $('#btnGuardarReg').prop('disabled', true);
+
+    const inputs = $("#modalAdd input.model").serializeArray();
+    const inputs_sin_valor = inputs.filter(item => item.value.trim() === "");
+
+    if (inputs_sin_valor.length > 0) {
+        const mensaje = `Debe completar el campo: "${inputs_sin_valor[0].name}"`;
+        MensajeToast("Advertencia", mensaje, "warning");
+        $(`input[name="${inputs_sin_valor[0].name}"]`).focus();
+        habilitarBoton();
+        return;
+    }
+
+    // 1. CAPTURAR LA IMAGEN ACTUAL
+    // Leemos qué imagen tiene actualmente la etiqueta <img> en el modal
+    let urlImagenActual = $("#imgEstud").attr("src");
+
+    // Si es la imagen por defecto, la mandamos vacía para no guardar esa ruta en BD
+    if (urlImagenActual.includes("sinimagen.png")) {
+        urlImagenActual = "";
+    }
+
+    // 2. ARMAR EL OBJETO
+    const objeto = {
+        IdEstudiante: idEditar,
+        Nombres: $("#txtNombrees").val().trim(),
+        Apellidos: $("#txtApellidos").val().trim(),
+        NroCi: $("#txtNroci").val().trim(),
+        Codigo: $("#txtCodigo").val().trim(),
+        Correo: $("#txtCorreo").val().trim(),
+        Celular: $("#txtCelular").val().trim(),
+        IdCarrera: parseInt($("#cboCarreras").val()),
+        Estado: ($("#cboEstado").val() === "1" ? true : false),
+        ImagenEstUrl: urlImagenActual // <-- Aquí aseguramos que viaje la foto antigua
+    };
+
+    // 3. PROCESAR EL INPUT FILE
+    const fileInput = document.getElementById('txtFoto');
+    const file = fileInput.files[0];
+
+    // Si el usuario seleccionó una foto nueva, la leemos
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Extraemos solo el texto Base64, quitando la cabecera (data:image/jpeg;base64,)
+            const base64String = e.target.result.split(',')[1];
+
+            // Disparamos el AJAX enviando la imagen
+            enviarAjaxEstudiante(objeto, base64String);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        // Si no hay foto nueva, disparamos el AJAX mandando el base64 vacío
+        enviarAjaxEstudiante(objeto, "");
+    }
+});
+
+// 4. FUNCIÓN AUXILIAR AJAX
+// La separamos aquí para no repetir código en el if/else de arriba
+function enviarAjaxEstudiante(objeto, base64String) {
+    $("#modalAdd").find("div.modal-content").LoadingOverlay("show");
+
+    const url = idEditar === 0 ? "EstudiantesPage.aspx/Guardar" : "EstudiantesPage.aspx/Editar";
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        // IMPORTANTE: Aquí mandamos los dos parámetros exactos que pide tu WebMethod
+        data: JSON.stringify({ objeto: objeto, base64Image: base64String }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+            $("#modalAdd").find("div.modal-content").LoadingOverlay("hide");
+
+            if (response.d.Estado) {
+                mostrarAlerta("¡Excelente!", response.d.Mensaje, "success");
+                $("#modalAdd").modal('hide');
+
+                // Recargamos la tabla respetando el Grado y Carrera seleccionados actualmente
+                const idGradoAcademico = $("#cboGrados").val();
+                const idCarrera = $("#cboCarreras").val();
+
+                if (idGradoAcademico && idCarrera) {
+                    // Cargamos a los estudiantes filtrados por Grado y Carrera específica
+                    listaEstudiantes(parseInt(idGradoAcademico), parseInt(idCarrera));
+                } else if (idGradoAcademico) {
+                    // Si regresó la carrera a "-- Seleccione una Carrera --" pero el Grado sigue seleccionado,
+                    // volvemos a mostrar a todos los del Grado (Mandamos 0).
+                    listaEstudiantes(parseInt(idGradoAcademico), 0);
+                }
+
+                idEditar = 0;
+            } else {
+                mostrarAlerta("¡Advertencia!", response.d.Mensaje, "error");
+            }
+        },
+        error: function () {
+            $("#modalAdd").find("div.modal-content").LoadingOverlay("hide");
+            mostrarAlerta("¡Advertencia!", "Error de comunicación con el servidor.", "error");
+        },
+        complete: function () {
+            habilitarBoton();
+        }
+    });
+}
 
 // fin

@@ -154,7 +154,7 @@
 
 
                     <div class="menu-item">
-                        <a href="DocentesPage.aspx" class="menu-link">
+                        <a href="ListaDocentesPage.aspx" class="menu-link">
                             <div class="menu-icon">
                                 <i class="fas fa-money-check-dollar"></i>
                             </div>

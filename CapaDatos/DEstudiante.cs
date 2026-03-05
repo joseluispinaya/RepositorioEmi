@@ -174,5 +174,55 @@ namespace CapaDatos
             }
         }
 
+        public Respuesta<List<EEstudiante>> FiltroEstudiantes(string Busqueda)
+        {
+            try
+            {
+                List<EEstudiante> rptLista = new List<EEstudiante>();
+
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand comando = new SqlCommand("usp_FiltroEstudiantes", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Busqueda", Busqueda);
+                        con.Open();
+
+                        using (SqlDataReader dr = comando.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                rptLista.Add(new EEstudiante()
+                                {
+                                    IdEstudiante = Convert.ToInt32(dr["IdEstudiante"]),
+                                    Nombres = dr["Nombres"].ToString(),
+                                    Apellidos = dr["Apellidos"].ToString(),
+                                    NroCi = dr["NroCi"].ToString(),
+                                    Codigo = dr["Codigo"].ToString(),
+                                    ImagenEstUrl = dr["ImagenEstUrl"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+                return new Respuesta<List<EEstudiante>>()
+                {
+                    Estado = true,
+                    Data = rptLista,
+                    Mensaje = "Estudiantes obtenidos correctamente"
+                };
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier error inesperado
+                return new Respuesta<List<EEstudiante>>()
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
+
     }
 }

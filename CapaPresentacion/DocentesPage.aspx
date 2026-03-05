@@ -140,7 +140,7 @@
                     <div class="row">
                         <div class="col-xl-12 text-center mb-2">
                             <button id="btnGuardarReg" type="button" class="btn btn-sm btn-lime me-2"><i class="fas fa-pencil me-2"></i>Guardar Cambios</button>
-                            <button id="btnSwaln" type="button" class="btn btn-sm btn-success"><i class="fas fa-pencil me-2"></i>Volver</button>
+                            <a href="ListaDocentesPage.aspx" class="btn btn-sm btn-success"><i class="fas fa-circle-arrow-left me-2"></i>Volver</a>
                         </div>
                     </div>
 
@@ -158,7 +158,7 @@
                         <input type="file" id="txtpdf" class="form-control form-control-sm" accept=".pdf">
                     </div>
                     <div class="text-center">
-                        <iframe id="verPdf" src="Docpdf/sindoc.pdf" style="width: 90%; height: 400px; border: none;"></iframe>
+                        <iframe id="verPdf" style="width: 90%; height: 400px; border: none;"></iframe>
                     </div>
                 </div>
             </div>

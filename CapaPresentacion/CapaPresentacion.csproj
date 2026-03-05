@@ -737,6 +737,7 @@
     <Content Include="DocentesPage.aspx" />
     <Content Include="EstudiantesPage.aspx" />
     <Content Include="GradosPage.aspx" />
+    <Content Include="ImagenesDoce\logoEmi.png" />
     <Content Include="Imagen\alerta.png" />
     <Content Include="Imagen\error.png" />
     <Content Include="Imagen\sinimagen.png" />
@@ -750,7 +751,11 @@
     <Content Include="js\Inicio.js" />
     <Content Include="js\ListaDocentesPage.js" />
     <Content Include="js\Masterpa.js" />
+    <Content Include="js\ModuloProyectoPage.js" />
+    <Content Include="js\ProyectosPage.js" />
     <Content Include="ListaDocentesPage.aspx" />
+    <Content Include="ModuloProyectoPage.aspx" />
+    <Content Include="ProyectosPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -796,6 +801,13 @@
     <Compile Include="ListaDocentesPage.aspx.designer.cs">
       <DependentUpon>ListaDocentesPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModuloProyectoPage.aspx.cs">
+      <DependentUpon>ModuloProyectoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuloProyectoPage.aspx.designer.cs">
+      <DependentUpon>ModuloProyectoPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PageMaster.Master.cs">
       <DependentUpon>PageMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -804,6 +816,13 @@
       <DependentUpon>PageMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectosPage.aspx.cs">
+      <DependentUpon>ProyectosPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProyectosPage.aspx.designer.cs">
+      <DependentUpon>ProyectosPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilidadesj.cs" />
   </ItemGroup>
   <ItemGroup>

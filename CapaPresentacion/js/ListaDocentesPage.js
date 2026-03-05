@@ -80,10 +80,34 @@ $('#tbDocentes tbody').on('click', '.btn-editar', function () {
     }
 
     let data = tablaData.row(fila).data();
-    //const textoSms = `Editar Doce con ID: ${data.IdDocente}.`;
-    //mostrarAlerta("¡Mensaje!", textoSms, "info");
-
-    window.location.href = 'DocentesPage.aspx?id=' + data.IdDocente;
+    // Mostramos la alerta de confirmación estilo Color Admin
+    swal({
+        title: '¿Editar Docente?',
+        text: `¿Deseas modificar los datos de ${data.Nombres} ${data.Apellidos}?`,
+        icon: 'info',
+        buttons: {
+            cancel: {
+                text: 'Cancelar',
+                value: null,
+                visible: true,
+                className: 'btn btn-default',
+                closeModal: true,
+            },
+            confirm: {
+                text: 'Sí, editar',
+                value: true,
+                visible: true,
+                className: 'btn btn-primary',
+                closeModal: true
+            }
+        }
+    }).then((willEdit) => {
+        // promise: willEdit será true si hizo clic en "Sí, editar"
+        if (willEdit) {
+            // Recién aquí hacemos la redirección pasando el ID real
+            window.location.href = 'DocentesPage.aspx?id=' + data.IdDocente;
+        }
+    });
 
 });
 
@@ -96,14 +120,53 @@ $('#tbDocentes tbody').on('click', '.btn-detalle', function () {
     }
 
     let data = tablaData.row(fila).data();
-    const textoSms = `Detalles del Doce: ${data.Nombres}.`;
+    const textoSms = `Detalles de: ${data.Nombres} ${data.Apellidos}.`;
     mostrarAlerta("¡Mensaje!", textoSms, "info");
 
 });
 
-$("#btnNuevore").on("click", function () {
-    // Caso 1: Nuevo Registro
-    window.location.href = 'DocentesPage.aspx?id=' + idProyecto;
-})
+$("#btnNuevore").on("click", function (e) {
+    e.preventDefault(); // Por si es un <a>
+
+    // Para un registro nuevo, la redirección suele ser directa,
+    // pero si también quieres ponerle un swal, puedes aplicar la misma lógica.
+    // Aquí mandamos id=0 para indicar que es nuevo.
+    window.location.href = 'DocentesPage.aspx?id=0';
+});
+
+$("#btnNuevorePrueba").on("click", function (e) {
+    e.preventDefault();
+
+    // Mostramos la alerta de confirmación estilo Color Admin
+    swal({
+        title: '¿Nuevo Docente?',
+        text: '¿Deseas Registrar un nuevo Docente?',
+        icon: 'info',
+        buttons: {
+            cancel: {
+                text: 'Cancelar',
+                value: null,
+                visible: true,
+                className: 'btn btn-default',
+                closeModal: true,
+            },
+            confirm: {
+                text: 'Sí, editar',
+                value: true,
+                visible: true,
+                className: 'btn btn-primary',
+                closeModal: true
+            }
+        }
+    }).then((willEdit) => {
+        // promise: willEdit será true si hizo clic en "Sí, editar"
+        if (willEdit) {
+            // Recién aquí hacemos la redirección pasando el ID real
+            window.location.href = 'DocentesPage.aspx?id=0';
+        }
+    });
+});
+
+
 
 // fin

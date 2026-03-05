@@ -44,5 +44,10 @@ namespace CapaNegocio
         {
             return DDocente.GetInstance().GuardarOrEditDocente(oDocente, listaCarreras);
         }
+
+        public Respuesta<List<EDocente>> FiltroDocentes(string Busqueda)
+        {
+            return DDocente.GetInstance().FiltroDocentes(Busqueda);
+        }
     }
 }

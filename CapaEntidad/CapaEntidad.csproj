@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="DTOs\DocenteDTO.cs" />
     <Compile Include="DTOs\EstudiantesDTO.cs" />
+    <Compile Include="DTOs\ProyectoResumenDTO.cs" />
+    <Compile Include="DTOs\ReporteProyectoDTO.cs" />
+    <Compile Include="DTOs\RevisorDTO.cs" />
     <Compile Include="Entidades\ECarrera.cs" />
     <Compile Include="Entidades\EDetalleRecomendacion.cs" />
     <Compile Include="Entidades\EDocente.cs" />

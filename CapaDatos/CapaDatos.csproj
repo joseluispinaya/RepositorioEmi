@@ -46,6 +46,7 @@
     <Compile Include="DDocente.cs" />
     <Compile Include="DEstudiante.cs" />
     <Compile Include="DGradoAcademico.cs" />
+    <Compile Include="DProyecto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

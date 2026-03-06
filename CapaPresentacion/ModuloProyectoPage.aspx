@@ -26,7 +26,6 @@
                         <div class="flex-1 ps-3">
                             <h5 id="lblNombrecom" class="mb-1">Espera...</h5>
                             <p id="lblDatos" class="mb-0">Espera...</p>
-                            <%--<p class="mb-0">Cras sit amet nibh libero, in</p>--%>
                         </div>
                     </div>
                     <hr class="bg-gray-500">
@@ -53,7 +52,6 @@
                         </div>
                         <div class="flex-1 ps-3">
                             <h5 id="lblNombrecomTu" class="mb-1">Espera...</h5>
-                            <%--<p class="mb-2">Cras sit amet nibh libero, in</p>--%>
                             <p id="lblDatosTu" class="mb-0">Espera...</p>
                         </div>
                     </div>
@@ -111,23 +109,17 @@
                     </p>
                     <input type="hidden" value="0" id="txtIRevisr">
                     <input type="hidden" value="0" id="txtImagens">
-                    <div class="row g-2">
-                        <div class="col-auto">
+                    <div class="row">
+                        <div class="col-md-5">
                             <label for="staticRevisores" class="visually-hidden">Revisores</label>
                             <input type="text" readonly class="form-control-plaintext" id="staticRevisores" value="Buscar Revisores">
                         </div>
-                        <div class="col-auto">
+                        <div class="col-md-7">
                             <label for="cboBuscarRevisores" class="visually-hidden">Buscar Revisores</label>
                             <select id="cboBuscarRevisores" class="default-select2 form-control" style="width: 100%;">
                                 <option value="">Escriba el nombre o CI del Revisor...</option>
                             </select>
                         </div>
-                        <%--<div class="col-auto">
-                            <div class="input-group">
-                                <div class="input-group-text">Revisor</div>
-                                <input type="text" id="txtNombrecompletoRe" class="form-control" readonly>
-                            </div>
-                        </div>--%>
                     </div>
 
                     <hr class="bg-gray-500 mb-3">
@@ -142,10 +134,8 @@
                         </div>
                         <div class="col-auto">
                             <div class="input-group">
-                                <label class="input-group-text" for="cboTiposRevisor">Tipo de Revisor</label>
+                                <label class="input-group-text" for="cboTiposRevisor">Rol</label>
                                 <select class="form-select" id="cboTiposRevisor">
-                                    <option value="1">Activosdd</option>
-                                    <option value="0">Inactivodsds</option>
                                 </select>
                             </div>
                         </div>
@@ -155,38 +145,16 @@
                     </div>
 
                     <div class="table-responsive mt-3 mb-3">
-                        <table class="table table-striped table-hover mb-0 align-middle">
+                        <table id="tbRevisores" class="table table-striped table-hover mb-0 align-middle">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Username</th>
-                                    <th>Email Address</th>
-                                    <th width="1%"></th>
+                                    <th>Cargo</th>
+                                    <th>Revisores</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="assets/img/user/user-1.jpg" class="rounded h-30px">
-                                    </td>
-                                    <td>Nicky Almera</td>
-                                    <td>nicky@hotmail.com</td>
-                                    <td nowrap="">
-                                        <a href="#" class="btn btn-sm btn-primary w-60px me-1">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-white w-60px">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="../assets/img/user/user-3.jpg" class="rounded h-30px">
-                                    </td>
-                                    <td>Harvinder Singh</td>
-                                    <td>harvinder@gmail.com</td>
-                                    <td class="with-btn" nowrap="">
-                                        <a href="#" class="btn btn-sm btn-primary w-60px me-1">Edit</a>
-                                        <a href="#" class="btn btn-sm btn-white w-60px">Delete</a>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -194,7 +162,7 @@
                     <div class="row">
                         <div class="col-xl-12 text-center mt-3 mb-2">
                             <button id="btnGuardarReg" type="button" class="btn btn-sm btn-lime me-2"><i class="fas fa-pencil me-2"></i>Guardar Cambios</button>
-                            <a href="ListaDocentesPage.aspx" class="btn btn-sm btn-success"><i class="fas fa-circle-arrow-left me-2"></i>Volver</a>
+                            <a href="ProyectosPage.aspx" class="btn btn-sm btn-success"><i class="fas fa-circle-arrow-left me-2"></i>Volver</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +179,7 @@
                         <input type="file" id="txtpdf" class="form-control form-control-sm" accept=".pdf">
                     </div>
                     <div class="text-center">
-                        <iframe id="verPdf" src="Docpdf/sindoc.pdf" style="width: 90%; height: 400px; border: none;"></iframe>
+                        <iframe id="verPdf" style="width: 90%; height: 400px; border: none;"></iframe>
                     </div>
                 </div>
             </div>

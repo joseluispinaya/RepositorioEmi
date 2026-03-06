@@ -43,7 +43,7 @@
             </div>
             <hr />
 
-            <table id="tbProyect" width="100%" class="table table-striped table-bordered align-middle text-nowrap">
+            <table id="tbProyect" width="100%" class="table table-striped table-bordered align-middle">
                 <thead>
                     <tr>
                         <th>Id</th>

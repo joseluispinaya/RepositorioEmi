@@ -898,6 +898,7 @@
     <Content Include="Docpdf\sindoc.pdf" />
     <None Include="packages.config" />
     <Content Include="PageMaster.Master" />
+    <Content Include="Proyectospdf\herbalife.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -25,6 +25,11 @@ namespace CapaNegocio
         }
         #endregion
 
+        public Respuesta<List<ETiposRevisor>> ListaTipoRevisores()
+        {
+            return DProyecto.GetInstance().ListaTipoRevisores();
+        }
+
         public Respuesta<List<ProyectoResumenDTO>> ListarProyectosPorCarrera(int idCarrera)
         {
             return DProyecto.GetInstance().ListarProyectosPorCarrera(idCarrera);

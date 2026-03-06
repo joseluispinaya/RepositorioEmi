@@ -154,7 +154,7 @@ function listaProyectos(idCarrera) {
         "columns": [
             { "data": "IdProyecto", "visible": false, "searchable": false },
             { "data": "Titulo" },
-            { "data": "EstNombreCompleto" },
+            { "data": "EstNombreCompleto", "width": "190px" },
             { "data": "FechaRegistroSt" },
             {
                 "defaultContent": '<button class="btn btn-lime btn-editar btn-sm me-2"><i class="fas fa-pencil-alt"></i></button>' +
@@ -228,8 +228,8 @@ $('#tbProyect tbody').on('click', '.btn-detalle', function () {
 
 $("#btnNuevore").on("click", function (e) {
     e.preventDefault(); // Por si es un <a>
-    window.location.href = 'ModuloProyectoPage.aspx';
-    //window.location.href = 'ModuloProyectoPage.aspx?id=0';
+    //window.location.href = 'ModuloProyectoPage.aspx';
+    window.location.href = 'ModuloProyectoPage.aspx?id=0';
 });
 
 // fin del combo en cascada

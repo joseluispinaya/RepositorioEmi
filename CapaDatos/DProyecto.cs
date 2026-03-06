@@ -26,6 +26,49 @@ namespace CapaDatos
         }
         #endregion
 
+        public Respuesta<List<ETiposRevisor>> ListaTipoRevisores()
+        {
+            try
+            {
+                List<ETiposRevisor> rptLista = new List<ETiposRevisor>();
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand comando = new SqlCommand("usp_TiposRevisores", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        con.Open();
+                        using (SqlDataReader dr = comando.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                rptLista.Add(new ETiposRevisor()
+                                {
+                                    IdTipoRevisor = Convert.ToInt32(dr["IdTipoRevisor"]),
+                                    Nombre = dr["Nombre"].ToString(),
+                                    Estado = Convert.ToBoolean(dr["Estado"])
+                                });
+                            }
+                        }
+                    }
+                }
+                return new Respuesta<List<ETiposRevisor>>()
+                {
+                    Estado = true,
+                    Data = rptLista,
+                    Mensaje = "Lista obtenida correctamente"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<List<ETiposRevisor>>()
+                {
+                    Estado = false,
+                    Data = null,
+                    Mensaje = $"Error al obtener la lista: {ex.Message}"
+                };
+            }
+        }
+
         public Respuesta<List<ProyectoResumenDTO>> ListarProyectosPorCarrera(int idCarrera)
         {
             try
